@@ -1,9 +1,12 @@
 -- =============================================
 -- PROJETO: Banco de Dados de Loja E-commerce
--- AUTOR: Rafael
+-- AUTOR: Luis Fillipe Backer Faria
 -- CURSO: Sistemas de Informacao - UniLaSalle RJ
--- DESCRICAO: Modelo relacional completo com
---            tabelas, PKs, FKs e constraints
+-- DESCRICAO: Script de criação do banco de dados
+--            para sistema de e-commerce contendo
+--            tabelas, relacionamentos, chaves
+--            primárias, chaves estrangeiras e
+--            restrições de integridade.
 -- =============================================
 
 -- Apaga o banco se ja existir (util para testes)
