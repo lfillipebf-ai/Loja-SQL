@@ -1,90 +1,155 @@
-# 🛒 Banco de Dados de Loja E-commerce (SQL)
+# 🛒 Loja SQL - Banco de Dados para E-commerce
 
-Modelo relacional completo de uma loja virtual, desenvolvido em SQL com MySQL. Inclui criação de tabelas, relacionamentos, dados de exemplo e consultas analíticas.
+Projeto de modelagem e implementação de banco de dados relacional para um sistema de e-commerce, desenvolvido utilizando MySQL.
 
-## 🗃️ Modelo de Dados
+O objetivo deste projeto é demonstrar a aplicação prática de conceitos de modelagem de dados, integridade referencial, relacionamentos entre entidades e consultas SQL voltadas para análise de informações comerciais.
 
-```
+---
+
+## 📋 Funcionalidades
+
+* Cadastro de categorias de produtos
+* Cadastro de produtos e controle de estoque
+* Cadastro de clientes
+* Gerenciamento de endereços de entrega
+* Registro de pedidos
+* Controle de pagamentos
+* Relacionamento entre pedidos e produtos
+* Consultas analíticas para apoio à tomada de decisão
+
+---
+
+## 🏗️ Modelo de Dados
+
+```text
 CATEGORIA ──< PRODUTO >── ITEM_PEDIDO >── PEDIDO ──< CLIENTE
                                               │
-                                          PAGAMENTO
+                                         PAGAMENTO
                                               │
                                           ENDERECO
 ```
 
-### Entidades
-| Tabela | Descrição |
-|---|---|
-| `categoria` | Categorias dos produtos |
-| `produto` | Catálogo de produtos com estoque |
-| `cliente` | Clientes cadastrados |
-| `endereco` | Endereços de entrega dos clientes |
-| `pedido` | Pedidos realizados |
-| `item_pedido` | Produtos de cada pedido (N:N) |
-| `pagamento` | Pagamentos dos pedidos |
+### Entidades Principais
 
-## 📋 Consultas disponíveis
+| Tabela      | Finalidade                          |
+| ----------- | ----------------------------------- |
+| categoria   | Armazena as categorias dos produtos |
+| produto     | Catálogo de produtos disponíveis    |
+| cliente     | Cadastro de clientes                |
+| endereco    | Endereços vinculados aos clientes   |
+| pedido      | Pedidos realizados pelos clientes   |
+| item_pedido | Itens pertencentes a cada pedido    |
+| pagamento   | Informações de pagamento            |
 
-- ✅ Produtos por categoria com estoque
-- ✅ Produtos com estoque baixo
-- ✅ Todos os pedidos com status
-- ✅ Detalhes completos de um pedido
-- ✅ Total gasto por cliente
-- ✅ Produtos mais vendidos
-- ✅ Receita por categoria
-- ✅ Pedidos por forma de pagamento
-- ✅ Clientes sem pedidos (LEFT JOIN)
-- ✅ Faturamento mensal
+---
 
-## 🛠️ Tecnologias
+## 📊 Consultas Implementadas
 
-- MySQL 8.0+
-- SQL (DDL, DML, DQL)
-- JOINs, GROUP BY, subconsultas
+### Produtos
 
-## 🚀 Como executar
+* Produtos por categoria
+* Produtos com estoque baixo
 
-### Pré-requisitos
-- [MySQL](https://dev.mysql.com/downloads/) ou [XAMPP](https://www.apachefriends.org/) instalado
+### Pedidos
 
-### Passo a passo
+* Listagem de pedidos com status
+* Detalhamento completo de pedidos
+* Pedidos agrupados por forma de pagamento
 
-```bash
-# 1. Acessa o MySQL pelo terminal
+### Clientes
+
+* Total gasto por cliente
+* Clientes sem pedidos
+
+### Relatórios Gerenciais
+
+* Produtos mais vendidos
+* Receita por categoria
+* Faturamento mensal
+
+---
+
+## 💻 Tecnologias Utilizadas
+
+* MySQL 8+
+* SQL DDL
+* SQL DML
+* SQL DQL
+* JOINs
+* Subconsultas
+* GROUP BY
+* Funções de agregação
+
+---
+
+## 🚀 Como Executar
+
+### 1. Acessar o MySQL
+
+```sql
 mysql -u root -p
+```
 
-# 2. Executa os scripts na ordem:
+### 2. Executar os scripts
+
+```sql
 source sql/01_criar_tabelas.sql
 source sql/02_inserir_dados.sql
 source sql/03_consultas.sql
 ```
 
-Ou abre os arquivos direto no **MySQL Workbench** e executa na ordem.
+Ou execute os arquivos diretamente através do MySQL Workbench.
 
-## 📁 Estrutura do projeto
+---
 
-```
+## 📁 Estrutura do Projeto
+
+```text
 loja-sql/
+│
 ├── sql/
-│   ├── 01_criar_tabelas.sql   # Criação do banco e tabelas
-│   ├── 02_inserir_dados.sql   # Dados de exemplo
-│   └── 03_consultas.sql       # Relatórios e consultas
+│   ├── 01_criar_tabelas.sql
+│   ├── 02_inserir_dados.sql
+│   └── 03_consultas.sql
+│
 └── README.md
 ```
 
-## 📖 Conceitos aplicados
+---
 
-- Modelagem relacional com PKs e FKs
-- Constraints de integridade referencial
-- Relacionamento N:N com tabela associativa (item_pedido)
-- INNER JOIN e LEFT JOIN
-- Funções de agregação: SUM, COUNT, AVG
-- GROUP BY e ORDER BY
-- ENUM para campos com valores fixos
-- Tipo DECIMAL para valores monetários
+## 🎯 Conceitos Aplicados
+
+* Modelagem Relacional
+* Chaves Primárias (PK)
+* Chaves Estrangeiras (FK)
+* Integridade Referencial
+* Relacionamento N:N
+* Tabela Associativa
+* INNER JOIN
+* LEFT JOIN
+* SUM()
+* COUNT()
+* AVG()
+* GROUP BY
+* ORDER BY
+* ENUM
+* DECIMAL para valores monetários
+
+---
 
 ## 👨‍💻 Autor
 
-**Luis Fillipe Backer Faria** — Estudante de Sistemas de Informação - UniLaSalle Rio de Janeiro  
-📧 lfillipebf@gmail.com  
-🔗 [linkedin.com/in/luis-fillipe-backer-faria-bb8101303](https://www.linkedin.com/in/luis-fillipe-backer-faria-bb8101303)
+**Luis Fillipe Backer Faria**
+
+Estudante de Sistemas de Informação – UniLaSalle RJ
+
+📧 [lfillipebf@gmail.com](mailto:lfillipebf@gmail.com)
+
+🔗 LinkedIn:
+https://www.linkedin.com/in/luis-fillipe-backer-faria-bb8101303
+
+---
+
+## 📚 Objetivo Acadêmico
+
+Projeto desenvolvido para prática de modelagem de banco de dados relacional, criação de estruturas SQL e elaboração de consultas voltadas para ambientes corporativos e sistemas de comércio eletrônico.
