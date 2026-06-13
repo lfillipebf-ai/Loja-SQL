@@ -33,12 +33,16 @@ INSERT INTO produto (nome, descricao, preco, estoque, id_categoria) VALUES
 -- ========================
 -- CLIENTES
 -- ========================
+-- ========================
+-- CLIENTES
+-- ========================
 INSERT INTO cliente (cpf, nome, email, telefone) VALUES
-('12345678901', 'Rafael Palmieri',   'rafael@email.com',   '21999990001'),
-('23456789012', 'Ana Lima',          'ana@email.com',      '21999990002'),
-('34567890123', 'Carlos Souza',      'carlos@email.com',   '21999990003'),
-('45678901234', 'Mariana Costa',     'mariana@email.com',  '21999990004'),
-('56789012345', 'Pedro Alves',       'pedro@email.com',    '21999990005');
+('12345678901', 'Luis Fillipe',     '[luis@email.com](mailto:luis@email.com)',      '21999990001'),
+('23456789012', 'Ana Lima',         '[ana@email.com](mailto:ana@email.com)',       '21999990002'),
+('34567890123', 'Carlos Souza',     '[carlos@email.com](mailto:carlos@email.com)',    '21999990003'),
+('45678901234', 'Mariana Costa',    '[mariana@email.com](mailto:mariana@email.com)',   '21999990004'),
+('56789012345', 'Pedro Alves',      '[pedro@email.com](mailto:pedro@email.com)',     '21999990005');
+
 
 -- ========================
 -- ENDERECOS
@@ -65,8 +69,8 @@ INSERT INTO pedido (id_cliente, data_pedido, status, valor_total) VALUES
 -- ITENS DOS PEDIDOS
 -- ========================
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario) VALUES
-(1, 1, 1, 1899.90),  -- Rafael comprou Smartphone
-(1, 3, 1,  299.90),  -- Rafael comprou Fone
+(1, 1, 1, 1899.90),  -- Luis comprou Smartphone
+(1, 3, 1,  299.90),  -- Luis comprou Fone
 (2, 6, 1,   89.90),  -- Ana comprou Clean Code
 (2, 7, 1,   54.90),  -- Ana comprou O Poder do Habito
 (3, 2, 1, 3499.00),  -- Carlos comprou Notebook
@@ -74,7 +78,8 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario) VALU
 (4, 5, 1,  599.90),  -- Mariana comprou Tenis
 (5, 8, 1,  149.90),  -- Pedro comprou Bola
 (5, 9, 1,   79.90),  -- Pedro comprou Tapete Yoga
-(6, 6, 1,   89.90);  -- Rafael comprou Clean Code de novo
+(6, 6, 1,   89.90);  -- Luis comprou Clean Code novamente
+
 
 -- ========================
 -- PAGAMENTOS
