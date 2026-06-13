@@ -1,4 +1,10 @@
 -- =============================================
+-- PROJETO: Loja E-commerce
+-- AUTOR: Luis Fillipe Backer Faria
+-- DESCRICAO: Consultas SQL para análise de dados,
+--            relatórios gerenciais e validação
+--            das informações armazenadas no banco.
+-- =============================================
 -- CONSULTAS E RELATORIOS
 -- Execute DEPOIS dos scripts 01 e 02
 -- =============================================
@@ -69,7 +75,7 @@ SELECT
 FROM cliente c
 LEFT JOIN pedido p ON c.id_cliente = p.id_cliente
 GROUP BY c.id_cliente, c.nome
-ORDER BY total_gasto DESC;
+ORDER BY COALESCE(total_gasto,0) DESC;
 
 -- ========================
 -- 6. Produtos mais vendidos (por quantidade)
@@ -130,3 +136,25 @@ FROM pagamento
 WHERE status = 'aprovado'
   AND MONTH(data_pagamento) = 11
   AND YEAR(data_pagamento)  = 2025;
+-- ========================
+-- 11. Produto mais caro cadastrado
+-- ========================
+SELECT
+nome,
+preco
+FROM produto
+ORDER BY preco DESC
+LIMIT 1;
+
+-- ========================
+-- 12. Quantidade de produtos por categoria
+-- ========================
+SELECT
+c.nome AS categoria,
+COUNT(p.id_produto) AS quantidade_produtos
+FROM categoria c
+LEFT JOIN produto p
+ON c.id_categoria = p.id_categoria
+GROUP BY c.id_categoria, c.nome
+ORDER BY quantidade_produtos DESC;
+
