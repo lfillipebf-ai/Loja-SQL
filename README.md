@@ -93,9 +93,9 @@ mysql -u root -p
 ### 2. Executar os scripts
 
 ```sql
-source sql/01_criar_tabelas.sql
-source sql/02_inserir_dados.sql
-source sql/03_consultas.sql
+source 01_criar_tabelas.sql
+source 02_inserir_dados.sql
+source 03_consultas.sql
 ```
 
 Ou execute os arquivos diretamente através do MySQL Workbench.
@@ -107,10 +107,10 @@ Ou execute os arquivos diretamente através do MySQL Workbench.
 ```text
 loja-sql/
 │
-├── sql/
-│   ├── 01_criar_tabelas.sql
-│   ├── 02_inserir_dados.sql
-│   └── 03_consultas.sql
+├── 
+├── 01_criar_tabelas.sql
+├── 02_inserir_dados.sql
+└── 03_consultas.sql
 │
 └── README.md
 ```
