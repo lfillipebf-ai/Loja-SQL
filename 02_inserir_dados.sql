@@ -37,11 +37,11 @@ INSERT INTO produto (nome, descricao, preco, estoque, id_categoria) VALUES
 -- CLIENTES
 -- ========================
 INSERT INTO cliente (cpf, nome, email, telefone) VALUES
-('12345678901', 'Luis Fillipe',     '[luis@email.com](mailto:luis@email.com)',      '21999990001'),
-('23456789012', 'Ana Lima',         '[ana@email.com](mailto:ana@email.com)',       '21999990002'),
-('34567890123', 'Carlos Souza',     '[carlos@email.com](mailto:carlos@email.com)',    '21999990003'),
-('45678901234', 'Mariana Costa',    '[mariana@email.com](mailto:mariana@email.com)',   '21999990004'),
-('56789012345', 'Pedro Alves',      '[pedro@email.com](mailto:pedro@email.com)',     '21999990005');
+('12345678901', 'Luis Fillipe',     'luis@email.com',      '21999990001'),
+('23456789012', 'Ana Lima',         'ana@email.com',       '21999990002'),
+('34567890123', 'Carlos Souza',     'carlos@email.com',    '21999990003'),
+('45678901234', 'Mariana Costa',    'mariana@email.com',   '21999990004'),
+('56789012345', 'Pedro Alves',      'pedro@email.com',     '21999990005');
 
 
 -- ========================
@@ -59,8 +59,8 @@ INSERT INTO endereco (id_cliente, rua, numero, bairro, cidade, estado, cep) VALU
 -- ========================
 INSERT INTO pedido (id_cliente, data_pedido, status, valor_total) VALUES
 (1, '2025-11-01 10:00:00', 'entregue', 2199.80),
-(2, '2025-11-05 14:30:00', 'entregue',  149.80),
-(3, '2025-11-10 09:15:00', 'enviado',  3598.90),
+(2, '2025-11-05 14:30:00', 'entregue',  144.80),
+(3, '2025-11-10 09:15:00', 'enviado',  3598.80),
 (4, '2025-11-15 16:45:00', 'pago',      599.90),
 (5, '2025-11-20 11:00:00', 'pendente',  229.80),
 (1, '2025-11-25 13:20:00', 'pago',       89.90);
@@ -86,8 +86,8 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario) VALU
 -- ========================
 INSERT INTO pagamento (id_pedido, forma, data_pagamento, valor, status) VALUES
 (1, 'cartao_credito', '2025-11-01 10:05:00', 2199.80, 'aprovado'),
-(2, 'pix',            '2025-11-05 14:31:00',  149.80, 'aprovado'),
-(3, 'boleto',         '2025-11-11 08:00:00', 3598.90, 'aprovado'),
+(2, 'pix',            '2025-11-05 14:31:00',  144.80, 'aprovado'),
+(3, 'boleto',         '2025-11-11 08:00:00', 3598.80, 'aprovado'),
 (4, 'cartao_debito',  '2025-11-15 16:46:00',  599.90, 'aprovado'),
 (5, 'pix',             NULL,                   229.80, 'pendente'),
 (6, 'pix',            '2025-11-25 13:22:00',   89.90, 'aprovado');
